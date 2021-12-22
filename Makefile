@@ -52,7 +52,7 @@ format: install
 
 .PHONY: test
 test: install
-	$(POETRY) run coverage run --source=$(NAME) -m pytest -vv && $(POETRY) run coverage report -m
+	$(POETRY) run python manage.py test $(filter-out $@,$(MAKECMDGOALS))
 
 .PHONY: pre-commit
 pre-commit: install
@@ -61,3 +61,6 @@ pre-commit: install
 .PHONY: run
 run: install
 	$(POETRY) run $(PY) manage.py runserver
+
+%:
+	@:
