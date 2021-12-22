@@ -82,6 +82,9 @@ DATABASES = {
             "read_default_file": os.path.join(BASE_DIR, "my.cnf"),
             "init_command": "SET default_storage_engine=INNODB",  # remove after tables creation
         },
+        'TEST': {
+            'NAME': 'test_playlist_handler',
+        },
         "TIMEZONE": "Europe/Paris",
     }
 }
